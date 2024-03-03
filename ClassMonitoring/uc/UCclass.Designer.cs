@@ -103,12 +103,14 @@ namespace ClassMonitoring.uc
             // cmbyear
             // 
             this.cmbyear.BackColor = System.Drawing.Color.Transparent;
+            this.cmbyear.BorderColor = System.Drawing.Color.Black;
+            this.cmbyear.BorderThickness = 2;
             this.cmbyear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbyear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbyear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbyear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbyear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbyear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbyear.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cmbyear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbyear.ItemHeight = 30;
             this.cmbyear.Location = new System.Drawing.Point(81, 111);
@@ -120,24 +122,26 @@ namespace ClassMonitoring.uc
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 111);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(21, 111);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(72, 48);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(54, 48);
             this.guna2HtmlLabel3.TabIndex = 30;
-            this.guna2HtmlLabel3.Text = "Year";
+            this.guna2HtmlLabel3.Text = "Year:";
             this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
             // 
             // cmbclass
             // 
             this.cmbclass.BackColor = System.Drawing.Color.Transparent;
+            this.cmbclass.BorderColor = System.Drawing.Color.Black;
+            this.cmbclass.BorderThickness = 2;
             this.cmbclass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbclass.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbclass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbclass.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbclass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbclass.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbclass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cmbclass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbclass.ItemHeight = 30;
             this.cmbclass.Location = new System.Drawing.Point(81, 57);
@@ -149,24 +153,26 @@ namespace ClassMonitoring.uc
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2HtmlLabel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(72, 48);
             this.guna2HtmlLabel1.TabIndex = 28;
-            this.guna2HtmlLabel1.Text = "Teacher";
+            this.guna2HtmlLabel1.Text = "Teacher:";
             this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // cmbTeacher
             // 
             this.cmbTeacher.BackColor = System.Drawing.Color.Transparent;
+            this.cmbTeacher.BorderColor = System.Drawing.Color.Black;
+            this.cmbTeacher.BorderThickness = 2;
             this.cmbTeacher.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbTeacher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTeacher.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbTeacher.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbTeacher.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cmbTeacher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbTeacher.ItemHeight = 30;
             this.cmbTeacher.Items.AddRange(new object[] {
@@ -180,13 +186,13 @@ namespace ClassMonitoring.uc
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 57);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(16, 57);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(72, 48);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(59, 48);
             this.guna2HtmlLabel2.TabIndex = 29;
-            this.guna2HtmlLabel2.Text = "Class";
+            this.guna2HtmlLabel2.Text = "Class:";
             this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
             // 
             // guna2Button1
@@ -231,7 +237,7 @@ namespace ClassMonitoring.uc
             this.delete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 10.2F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -360,6 +366,8 @@ namespace ClassMonitoring.uc
             // 
             // txtsearch
             // 
+            this.txtsearch.BorderColor = System.Drawing.Color.Black;
+            this.txtsearch.BorderThickness = 2;
             this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtsearch.DefaultText = "Search Teacher";
             this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

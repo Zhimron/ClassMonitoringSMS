@@ -263,6 +263,8 @@ namespace ClassMonitoring.uc
             // 
             // txtSearch
             // 
+            this.txtSearch.BorderColor = System.Drawing.Color.Black;
+            this.txtSearch.BorderThickness = 2;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -271,7 +273,7 @@ namespace ClassMonitoring.uc
             this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Location = new System.Drawing.Point(3, 4);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -338,8 +340,8 @@ namespace ClassMonitoring.uc
             this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoad.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoad.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLoad.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoad.ForeColor = System.Drawing.Color.White;
             this.btnLoad.Location = new System.Drawing.Point(931, 3);
             this.btnLoad.Name = "btnLoad";

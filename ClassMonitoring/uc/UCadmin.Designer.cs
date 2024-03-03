@@ -29,15 +29,12 @@ namespace ClassMonitoring.uc
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvadmins = new Guna.UI2.WinForms.Guna2DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,11 +45,14 @@ namespace ClassMonitoring.uc
             this.txtpass = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtusername = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbtype = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtname = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvadmins)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -62,8 +62,10 @@ namespace ClassMonitoring.uc
             // 
             // txtsearch
             // 
+            this.txtsearch.BorderColor = System.Drawing.Color.Black;
+            this.txtsearch.BorderThickness = 2;
             this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsearch.DefaultText = "Search admins";
+            this.txtsearch.DefaultText = "Search";
             this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -117,39 +119,6 @@ namespace ClassMonitoring.uc
             this.guna2Button2.Text = "Add Account";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 113);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(100, 52);
-            this.guna2HtmlLabel3.TabIndex = 30;
-            this.guna2HtmlLabel3.Text = "Password";
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 3);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(73, 29);
-            this.guna2HtmlLabel1.TabIndex = 28;
-            this.guna2HtmlLabel1.Text = "Name";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 58);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(117, 29);
-            this.guna2HtmlLabel2.TabIndex = 29;
-            this.guna2HtmlLabel2.Text = "Username";
-            // 
             // guna2Button1
             // 
             this.guna2Button1.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -173,16 +142,16 @@ namespace ClassMonitoring.uc
             // 
             this.dgvadmins.AllowUserToAddRows = false;
             this.dgvadmins.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvadmins.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(26)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvadmins.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvadmins.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(26)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvadmins.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvadmins.ColumnHeadersHeight = 48;
             this.dgvadmins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvadmins.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -190,14 +159,14 @@ namespace ClassMonitoring.uc
             this.username,
             this.usertype,
             this.delete});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Light", 10.2F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvadmins.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvadmins.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvadmins.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvadmins.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvadmins.Location = new System.Drawing.Point(382, 3);
@@ -270,15 +239,15 @@ namespace ClassMonitoring.uc
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
+            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel4, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel3, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtpass, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.txtusername, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.guna2Button1, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel3, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.cmbtype, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel4, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtname, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -295,7 +264,8 @@ namespace ClassMonitoring.uc
             // 
             // txtpass
             // 
-            this.txtpass.BorderRadius = 5;
+            this.txtpass.BorderColor = System.Drawing.Color.Black;
+            this.txtpass.BorderThickness = 2;
             this.txtpass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtpass.DefaultText = "";
             this.txtpass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -304,7 +274,7 @@ namespace ClassMonitoring.uc
             this.txtpass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtpass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtpass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtpass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtpass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtpass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtpass.Location = new System.Drawing.Point(109, 114);
             this.txtpass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -317,7 +287,8 @@ namespace ClassMonitoring.uc
             // 
             // txtusername
             // 
-            this.txtusername.BorderRadius = 5;
+            this.txtusername.BorderColor = System.Drawing.Color.Black;
+            this.txtusername.BorderThickness = 2;
             this.txtusername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtusername.DefaultText = "";
             this.txtusername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -326,7 +297,7 @@ namespace ClassMonitoring.uc
             this.txtusername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtusername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtusername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtusername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtusername.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtusername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtusername.Location = new System.Drawing.Point(109, 59);
             this.txtusername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -340,13 +311,14 @@ namespace ClassMonitoring.uc
             // cmbtype
             // 
             this.cmbtype.BackColor = System.Drawing.Color.Thistle;
-            this.cmbtype.BorderRadius = 5;
+            this.cmbtype.BorderColor = System.Drawing.Color.Black;
+            this.cmbtype.BorderThickness = 2;
             this.cmbtype.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbtype.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbtype.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbtype.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbtype.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbtype.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cmbtype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbtype.ItemHeight = 30;
             this.cmbtype.Items.AddRange(new object[] {
@@ -358,20 +330,10 @@ namespace ClassMonitoring.uc
             this.cmbtype.Size = new System.Drawing.Size(261, 36);
             this.cmbtype.TabIndex = 32;
             // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 171);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(100, 49);
-            this.guna2HtmlLabel4.TabIndex = 33;
-            this.guna2HtmlLabel4.Text = "User Type";
-            // 
             // txtname
             // 
-            this.txtname.BorderRadius = 5;
+            this.txtname.BorderColor = System.Drawing.Color.Black;
+            this.txtname.BorderThickness = 2;
             this.txtname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtname.DefaultText = "";
             this.txtname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -380,7 +342,7 @@ namespace ClassMonitoring.uc
             this.txtname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtname.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtname.Location = new System.Drawing.Point(109, 4);
             this.txtname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -433,6 +395,50 @@ namespace ClassMonitoring.uc
             this.guna2Panel1.Size = new System.Drawing.Size(1329, 37);
             this.guna2Panel1.TabIndex = 25;
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(34, 3);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(69, 49);
+            this.guna2HtmlLabel1.TabIndex = 37;
+            this.guna2HtmlLabel1.Text = " Name:";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 58);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(100, 49);
+            this.guna2HtmlLabel2.TabIndex = 38;
+            this.guna2HtmlLabel2.Text = "Username:";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 113);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(100, 52);
+            this.guna2HtmlLabel3.TabIndex = 39;
+            this.guna2HtmlLabel3.Text = "Password:";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 171);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(100, 49);
+            this.guna2HtmlLabel4.TabIndex = 40;
+            this.guna2HtmlLabel4.Text = "User Type:";
+            // 
             // UCadmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -457,16 +463,12 @@ namespace ClassMonitoring.uc
         private Guna.UI2.WinForms.Guna2TextBox txtsearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvadmins;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2TextBox txtpass;
         private Guna.UI2.WinForms.Guna2TextBox txtusername;
         private Guna.UI2.WinForms.Guna2ComboBox cmbtype;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2TextBox txtname;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -475,5 +477,9 @@ namespace ClassMonitoring.uc
         private System.Windows.Forms.DataGridViewTextBoxColumn usertype;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }
