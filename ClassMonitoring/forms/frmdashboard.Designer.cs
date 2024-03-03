@@ -30,7 +30,6 @@ namespace ClassMonitoring.forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmdashboard));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnstudent = new Guna.UI2.WinForms.Guna2Button();
@@ -38,38 +37,37 @@ namespace ClassMonitoring.forms
             this.btnreports = new Guna.UI2.WinForms.Guna2Button();
             this.btnadmin = new Guna.UI2.WinForms.Guna2Button();
             this.btnclassreport = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlcontainer = new System.Windows.Forms.Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_identifier = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbluser = new System.Windows.Forms.Label();
             this.lblusertype = new System.Windows.Forms.Label();
-            this.USER = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbldate = new System.Windows.Forms.Label();
             this.lbltime = new System.Windows.Forms.Label();
             this.lblid = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbluser = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -92,7 +90,7 @@ namespace ClassMonitoring.forms
             this.tableLayoutPanel1.Controls.Add(this.btnreports, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnadmin, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnclassreport, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.guna2PictureBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -109,111 +107,123 @@ namespace ClassMonitoring.forms
             // 
             // btnstudent
             // 
+            this.btnstudent.BorderColor = System.Drawing.Color.Navy;
+            this.btnstudent.BorderRadius = 5;
+            this.btnstudent.BorderThickness = 5;
             this.btnstudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnstudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnstudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnstudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnstudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnstudent.FillColor = System.Drawing.Color.Transparent;
-            this.btnstudent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnstudent.ForeColor = System.Drawing.Color.White;
+            this.btnstudent.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnstudent.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnstudent.Location = new System.Drawing.Point(3, 202);
             this.btnstudent.Name = "btnstudent";
             this.btnstudent.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnstudent.Size = new System.Drawing.Size(210, 83);
             this.btnstudent.TabIndex = 0;
             this.btnstudent.Text = "Students";
-            this.btnstudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnstudent.Click += new System.EventHandler(this.btnstudent_Click);
             // 
             // btnclass
             // 
+            this.btnclass.BorderColor = System.Drawing.Color.Navy;
+            this.btnclass.BorderRadius = 5;
+            this.btnclass.BorderThickness = 5;
             this.btnclass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnclass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnclass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnclass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnclass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnclass.FillColor = System.Drawing.Color.Transparent;
-            this.btnclass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclass.ForeColor = System.Drawing.Color.White;
+            this.btnclass.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnclass.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnclass.Location = new System.Drawing.Point(3, 291);
             this.btnclass.Name = "btnclass";
             this.btnclass.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnclass.Size = new System.Drawing.Size(210, 83);
             this.btnclass.TabIndex = 1;
             this.btnclass.Text = "Class Setup";
-            this.btnclass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnclass.Click += new System.EventHandler(this.btnclass_Click);
             // 
             // btnreports
             // 
+            this.btnreports.BorderColor = System.Drawing.Color.Navy;
+            this.btnreports.BorderRadius = 5;
+            this.btnreports.BorderThickness = 5;
             this.btnreports.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnreports.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnreports.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnreports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnreports.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnreports.FillColor = System.Drawing.Color.Transparent;
-            this.btnreports.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreports.ForeColor = System.Drawing.Color.White;
+            this.btnreports.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnreports.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnreports.Location = new System.Drawing.Point(3, 380);
             this.btnreports.Name = "btnreports";
             this.btnreports.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnreports.Size = new System.Drawing.Size(210, 83);
             this.btnreports.TabIndex = 2;
             this.btnreports.Text = "Reports";
-            this.btnreports.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnreports.Click += new System.EventHandler(this.btnreports_Click);
             // 
             // btnadmin
             // 
+            this.btnadmin.BorderColor = System.Drawing.Color.Navy;
+            this.btnadmin.BorderRadius = 5;
+            this.btnadmin.BorderThickness = 5;
             this.btnadmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnadmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnadmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnadmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnadmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnadmin.FillColor = System.Drawing.Color.Transparent;
-            this.btnadmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadmin.ForeColor = System.Drawing.Color.White;
+            this.btnadmin.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnadmin.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnadmin.Location = new System.Drawing.Point(3, 469);
             this.btnadmin.Name = "btnadmin";
             this.btnadmin.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnadmin.Size = new System.Drawing.Size(210, 83);
             this.btnadmin.TabIndex = 3;
             this.btnadmin.Text = "Admins";
-            this.btnadmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnadmin.Click += new System.EventHandler(this.btnadmin_Click);
             // 
             // btnclassreport
             // 
+            this.btnclassreport.BorderColor = System.Drawing.Color.Navy;
+            this.btnclassreport.BorderRadius = 5;
+            this.btnclassreport.BorderThickness = 5;
             this.btnclassreport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnclassreport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnclassreport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnclassreport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnclassreport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnclassreport.FillColor = System.Drawing.Color.Transparent;
-            this.btnclassreport.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclassreport.ForeColor = System.Drawing.Color.White;
+            this.btnclassreport.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnclassreport.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnclassreport.Location = new System.Drawing.Point(3, 558);
             this.btnclassreport.Name = "btnclassreport";
             this.btnclassreport.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnclassreport.Size = new System.Drawing.Size(210, 83);
             this.btnclassreport.TabIndex = 4;
             this.btnclassreport.Text = "Class Report";
-            this.btnclassreport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnclassreport.Click += new System.EventHandler(this.btnclassreport_Click);
             // 
-            // pictureBox3
+            // guna2PictureBox1
             // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(210, 195);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 20;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.guna2PictureBox1.BorderRadius = 105;
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::ClassMonitoring.Properties.Resources.logo;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(210, 193);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 21;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -252,6 +262,8 @@ namespace ClassMonitoring.forms
             // pnlcontainer
             // 
             this.pnlcontainer.BackColor = System.Drawing.Color.White;
+            this.pnlcontainer.BackgroundImage = global::ClassMonitoring.Properties.Resources.output_onlinepngtools;
+            this.pnlcontainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnlcontainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlcontainer.Location = new System.Drawing.Point(3, 82);
             this.pnlcontainer.Name = "pnlcontainer";
@@ -272,10 +284,10 @@ namespace ClassMonitoring.forms
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.40206F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.23711F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.86598F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.49484F));
             this.tableLayoutPanel4.Controls.Add(this.guna2Panel3, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.guna2Panel4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.guna2Panel5, 2, 0);
@@ -290,27 +302,11 @@ namespace ClassMonitoring.forms
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.Controls.Add(this.label1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(1053, 3);
+            this.guna2Panel3.Location = new System.Drawing.Point(1045, 3);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(194, 67);
+            this.guna2Panel3.Size = new System.Drawing.Size(202, 67);
             this.guna2Panel3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(72, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Log-Out";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2Panel4
             // 
@@ -318,7 +314,7 @@ namespace ClassMonitoring.forms
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel4.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(194, 67);
+            this.guna2Panel4.Size = new System.Drawing.Size(161, 67);
             this.guna2Panel4.TabIndex = 3;
             // 
             // lbl_identifier
@@ -338,13 +334,11 @@ namespace ClassMonitoring.forms
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.label2);
-            this.guna2Panel5.Controls.Add(this.lbluser);
             this.guna2Panel5.Controls.Add(this.lblusertype);
-            this.guna2Panel5.Controls.Add(this.USER);
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel5.Location = new System.Drawing.Point(703, 3);
+            this.guna2Panel5.Location = new System.Drawing.Point(685, 3);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(344, 67);
+            this.guna2Panel5.Size = new System.Drawing.Size(354, 67);
             this.guna2Panel5.TabIndex = 4;
             // 
             // label2
@@ -358,46 +352,18 @@ namespace ClassMonitoring.forms
             this.label2.TabIndex = 1;
             this.label2.Text = "Home";
             // 
-            // lbluser
-            // 
-            this.lbluser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbluser.AutoSize = true;
-            this.lbluser.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluser.ForeColor = System.Drawing.Color.White;
-            this.lbluser.Location = new System.Drawing.Point(211, 28);
-            this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(137, 30);
-            this.lbluser.TabIndex = 3;
-            this.lbluser.Text = "Welcome:";
-            // 
             // lblusertype
             // 
             this.lblusertype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblusertype.AutoSize = true;
             this.lblusertype.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusertype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(202)))));
-            this.lblusertype.Location = new System.Drawing.Point(76, 45);
+            this.lblusertype.Location = new System.Drawing.Point(45, 19);
             this.lblusertype.Name = "lblusertype";
             this.lblusertype.Size = new System.Drawing.Size(52, 23);
             this.lblusertype.TabIndex = 2;
             this.lblusertype.Text = "dass";
             this.lblusertype.Visible = false;
-            // 
-            // USER
-            // 
-            this.USER.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.USER.AutoSize = true;
-            this.USER.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.USER.ForeColor = System.Drawing.Color.White;
-            this.USER.Location = new System.Drawing.Point(76, 28);
-            this.USER.Name = "USER";
-            this.USER.Size = new System.Drawing.Size(137, 30);
-            this.USER.TabIndex = 1;
-            this.USER.Text = "Welcome:";
             // 
             // guna2Panel6
             // 
@@ -405,10 +371,11 @@ namespace ClassMonitoring.forms
             this.guna2Panel6.Controls.Add(this.lbltime);
             this.guna2Panel6.Controls.Add(this.lblid);
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel6.Location = new System.Drawing.Point(203, 3);
+            this.guna2Panel6.Location = new System.Drawing.Point(170, 3);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(494, 67);
+            this.guna2Panel6.Size = new System.Drawing.Size(509, 67);
             this.guna2Panel6.TabIndex = 5;
+            this.guna2Panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel6_Paint);
             // 
             // lbldate
             // 
@@ -417,11 +384,11 @@ namespace ClassMonitoring.forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbldate.AutoSize = true;
-            this.lbldate.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldate.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldate.ForeColor = System.Drawing.Color.White;
-            this.lbldate.Location = new System.Drawing.Point(188, 10);
+            this.lbldate.Location = new System.Drawing.Point(28, 0);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(100, 30);
+            this.lbldate.Size = new System.Drawing.Size(95, 28);
             this.lbldate.TabIndex = 6;
             this.lbldate.Text = "LogOut";
             // 
@@ -432,11 +399,11 @@ namespace ClassMonitoring.forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbltime.AutoSize = true;
-            this.lbltime.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltime.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltime.ForeColor = System.Drawing.Color.White;
-            this.lbltime.Location = new System.Drawing.Point(188, 45);
+            this.lbltime.Location = new System.Drawing.Point(28, 35);
             this.lbltime.Name = "lbltime";
-            this.lbltime.Size = new System.Drawing.Size(100, 30);
+            this.lbltime.Size = new System.Drawing.Size(95, 28);
             this.lbltime.TabIndex = 5;
             this.lbltime.Text = "LogOut";
             // 
@@ -447,25 +414,54 @@ namespace ClassMonitoring.forms
             this.lblid.AutoSize = true;
             this.lblid.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(202)))));
-            this.lblid.Location = new System.Drawing.Point(372, 45);
+            this.lblid.Location = new System.Drawing.Point(387, 45);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(76, 23);
             this.lblid.TabIndex = 4;
             this.lblid.Text = "LogOut";
             this.lblid.Visible = false;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // guna2Panel7
             // 
             this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(53)))), ((int)(((byte)(106)))));
+            this.guna2Panel7.Controls.Add(this.lbluser);
+            this.guna2Panel7.Controls.Add(this.label1);
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel7.Location = new System.Drawing.Point(3, 835);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(1250, 47);
             this.guna2Panel7.TabIndex = 3;
+            // 
+            // lbluser
+            // 
+            this.lbluser.AutoSize = true;
+            this.lbluser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbluser.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.ForeColor = System.Drawing.Color.White;
+            this.lbluser.Location = new System.Drawing.Point(989, 0);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(137, 30);
+            this.lbluser.TabIndex = 3;
+            this.lbluser.Text = "Welcome:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1126, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 34);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Log-Out";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmdashboard
             // 
@@ -479,19 +475,19 @@ namespace ClassMonitoring.forms
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.guna2Panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -517,14 +513,13 @@ namespace ClassMonitoring.forms
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.Label lblusertype;
-        private System.Windows.Forms.Label USER;
         private System.Windows.Forms.Label lblid;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbltime;
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

@@ -27,6 +27,7 @@ namespace ClassMonitoring.forms
             timer1.Tick += timer1_Tick;
             timer1.Start();
             UpdateDateTime();
+            
         }
       
       
@@ -57,7 +58,7 @@ namespace ClassMonitoring.forms
         {
             if (activeBtn != null)
             {
-                activeBtn.TextAlign = HorizontalAlignment.Left;
+                activeBtn.TextAlign = HorizontalAlignment.Center;
                 activeBtn.ForeColor = Color.White;
             }
 
@@ -191,6 +192,11 @@ namespace ClassMonitoring.forms
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
             if (lblusertype.Text == "Guard")
             {
                 lbl_identifier.Text = "Home";
@@ -203,6 +209,21 @@ namespace ClassMonitoring.forms
             {
                 MessageBox.Show("ERROR:For Guard only", "ERROR:", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void label1_MouseHover(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.FromArgb(255, 128, 0);
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.White;
+        }
+
+        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
