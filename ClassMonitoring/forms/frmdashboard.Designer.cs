@@ -243,9 +243,9 @@ namespace ClassMonitoring.forms
             this.tableLayoutPanel3.Location = new System.Drawing.Point(225, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.094995F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.1431F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.761905F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.983767F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.08961F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.926622F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1256, 885);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
@@ -253,9 +253,9 @@ namespace ClassMonitoring.forms
             // 
             this.pnlcontainer.BackColor = System.Drawing.Color.White;
             this.pnlcontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlcontainer.Location = new System.Drawing.Point(3, 83);
+            this.pnlcontainer.Location = new System.Drawing.Point(3, 82);
             this.pnlcontainer.Name = "pnlcontainer";
-            this.pnlcontainer.Size = new System.Drawing.Size(1250, 756);
+            this.pnlcontainer.Size = new System.Drawing.Size(1250, 747);
             this.pnlcontainer.TabIndex = 2;
             this.pnlcontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -266,7 +266,7 @@ namespace ClassMonitoring.forms
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1250, 74);
+            this.guna2Panel2.Size = new System.Drawing.Size(1250, 73);
             this.guna2Panel2.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -285,7 +285,7 @@ namespace ClassMonitoring.forms
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1250, 74);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1250, 73);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // guna2Panel3
@@ -294,7 +294,7 @@ namespace ClassMonitoring.forms
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.Location = new System.Drawing.Point(1053, 3);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(194, 68);
+            this.guna2Panel3.Size = new System.Drawing.Size(194, 67);
             this.guna2Panel3.TabIndex = 2;
             // 
             // label1
@@ -318,7 +318,7 @@ namespace ClassMonitoring.forms
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel4.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(194, 68);
+            this.guna2Panel4.Size = new System.Drawing.Size(194, 67);
             this.guna2Panel4.TabIndex = 3;
             // 
             // lbl_identifier
@@ -344,7 +344,7 @@ namespace ClassMonitoring.forms
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel5.Location = new System.Drawing.Point(703, 3);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(344, 68);
+            this.guna2Panel5.Size = new System.Drawing.Size(344, 67);
             this.guna2Panel5.TabIndex = 4;
             // 
             // label2
@@ -407,7 +407,7 @@ namespace ClassMonitoring.forms
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel6.Location = new System.Drawing.Point(203, 3);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(494, 68);
+            this.guna2Panel6.Size = new System.Drawing.Size(494, 67);
             this.guna2Panel6.TabIndex = 5;
             // 
             // lbldate
@@ -460,11 +460,11 @@ namespace ClassMonitoring.forms
             // 
             // guna2Panel7
             // 
-            this.guna2Panel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(53)))), ((int)(((byte)(106)))));
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel7.Location = new System.Drawing.Point(3, 845);
+            this.guna2Panel7.Location = new System.Drawing.Point(3, 835);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(1250, 37);
+            this.guna2Panel7.Size = new System.Drawing.Size(1250, 47);
             this.guna2Panel7.TabIndex = 3;
             // 
             // frmdashboard
