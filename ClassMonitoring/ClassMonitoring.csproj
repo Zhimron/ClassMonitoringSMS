@@ -152,6 +152,12 @@
     <Compile Include="uc\ucdashboard.Designer.cs">
       <DependentUpon>ucdashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc\UCsection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc\UCsection.Designer.cs">
+      <DependentUpon>UCsection.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc\UCstudentreports.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc\ucdashboard.resx">
       <DependentUpon>ucdashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\UCsection.resx">
+      <DependentUpon>UCsection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc\UCstudentreports.resx">
       <DependentUpon>UCstudentreports.cs</DependentUpon>

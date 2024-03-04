@@ -225,5 +225,21 @@ namespace ClassMonitoring.forms
         {
 
         }
+
+        private void btnsection_Click(object sender, EventArgs e)
+        {
+            if (lblusertype.Text == "ADMIN")
+            {
+                OpenButton(sender, btnsection.Text);
+                uc.UCsection uc = new uc.UCsection();
+                uc.Dock = DockStyle.Fill;
+                addUserControl(uc);
+            }
+            else
+            {
+
+                MessageBox.Show("ERROR:For ADMIN only", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }

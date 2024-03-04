@@ -38,6 +38,7 @@ namespace ClassMonitoring.forms
             this.btnadmin = new Guna.UI2.WinForms.Guna2Button();
             this.btnclassreport = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnsection = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlcontainer = new System.Windows.Forms.Panel();
@@ -91,17 +92,19 @@ namespace ClassMonitoring.forms
             this.tableLayoutPanel1.Controls.Add(this.btnadmin, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnclassreport, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.guna2PictureBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnsection, 0, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.53309F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.13235F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.13235F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.13235F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.13235F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.13235F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.80516F));
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.46045F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.200355F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.200355F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.200355F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.200355F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.200355F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.19822F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.33956F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(216, 885);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -118,10 +121,10 @@ namespace ClassMonitoring.forms
             this.btnstudent.FillColor = System.Drawing.Color.Transparent;
             this.btnstudent.Font = new System.Drawing.Font("Century Gothic", 13.8F);
             this.btnstudent.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnstudent.Location = new System.Drawing.Point(3, 202);
+            this.btnstudent.Location = new System.Drawing.Point(3, 184);
             this.btnstudent.Name = "btnstudent";
             this.btnstudent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnstudent.Size = new System.Drawing.Size(210, 83);
+            this.btnstudent.Size = new System.Drawing.Size(210, 75);
             this.btnstudent.TabIndex = 0;
             this.btnstudent.Text = "Students";
             this.btnstudent.Click += new System.EventHandler(this.btnstudent_Click);
@@ -139,10 +142,10 @@ namespace ClassMonitoring.forms
             this.btnclass.FillColor = System.Drawing.Color.Transparent;
             this.btnclass.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnclass.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnclass.Location = new System.Drawing.Point(3, 291);
+            this.btnclass.Location = new System.Drawing.Point(3, 265);
             this.btnclass.Name = "btnclass";
             this.btnclass.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnclass.Size = new System.Drawing.Size(210, 83);
+            this.btnclass.Size = new System.Drawing.Size(210, 75);
             this.btnclass.TabIndex = 1;
             this.btnclass.Text = "Class Setup";
             this.btnclass.Click += new System.EventHandler(this.btnclass_Click);
@@ -160,10 +163,10 @@ namespace ClassMonitoring.forms
             this.btnreports.FillColor = System.Drawing.Color.Transparent;
             this.btnreports.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnreports.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnreports.Location = new System.Drawing.Point(3, 380);
+            this.btnreports.Location = new System.Drawing.Point(3, 346);
             this.btnreports.Name = "btnreports";
             this.btnreports.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnreports.Size = new System.Drawing.Size(210, 83);
+            this.btnreports.Size = new System.Drawing.Size(210, 75);
             this.btnreports.TabIndex = 2;
             this.btnreports.Text = "Reports";
             this.btnreports.Click += new System.EventHandler(this.btnreports_Click);
@@ -181,10 +184,10 @@ namespace ClassMonitoring.forms
             this.btnadmin.FillColor = System.Drawing.Color.Transparent;
             this.btnadmin.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnadmin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnadmin.Location = new System.Drawing.Point(3, 469);
+            this.btnadmin.Location = new System.Drawing.Point(3, 427);
             this.btnadmin.Name = "btnadmin";
             this.btnadmin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnadmin.Size = new System.Drawing.Size(210, 83);
+            this.btnadmin.Size = new System.Drawing.Size(210, 75);
             this.btnadmin.TabIndex = 3;
             this.btnadmin.Text = "Admins";
             this.btnadmin.Click += new System.EventHandler(this.btnadmin_Click);
@@ -202,10 +205,10 @@ namespace ClassMonitoring.forms
             this.btnclassreport.FillColor = System.Drawing.Color.Transparent;
             this.btnclassreport.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnclassreport.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnclassreport.Location = new System.Drawing.Point(3, 558);
+            this.btnclassreport.Location = new System.Drawing.Point(3, 508);
             this.btnclassreport.Name = "btnclassreport";
             this.btnclassreport.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnclassreport.Size = new System.Drawing.Size(210, 83);
+            this.btnclassreport.Size = new System.Drawing.Size(210, 75);
             this.btnclassreport.TabIndex = 4;
             this.btnclassreport.Text = "Class Report";
             this.btnclassreport.Click += new System.EventHandler(this.btnclassreport_Click);
@@ -219,11 +222,32 @@ namespace ClassMonitoring.forms
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(210, 193);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(210, 175);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 21;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // btnsection
+            // 
+            this.btnsection.BorderColor = System.Drawing.Color.Navy;
+            this.btnsection.BorderRadius = 5;
+            this.btnsection.BorderThickness = 5;
+            this.btnsection.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnsection.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnsection.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnsection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnsection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnsection.FillColor = System.Drawing.Color.Transparent;
+            this.btnsection.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnsection.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnsection.Location = new System.Drawing.Point(3, 589);
+            this.btnsection.Name = "btnsection";
+            this.btnsection.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnsection.Size = new System.Drawing.Size(210, 75);
+            this.btnsection.TabIndex = 22;
+            this.btnsection.Text = "Section";
+            this.btnsection.Click += new System.EventHandler(this.btnsection_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -521,5 +545,6 @@ namespace ClassMonitoring.forms
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnsection;
     }
 }

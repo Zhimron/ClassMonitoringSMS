@@ -12,18 +12,20 @@ using System.Windows.Forms;
 
 namespace ClassMonitoring.uc
 {
-    public partial class UCadmin : UserControl
+    public partial class UCsection : UserControl
     {
         MySqlConnection connection;
         MySqlCommand cmd;
         MySqlDataReader dr;
         database db = new database();
-        public UCadmin()
+        public UCsection()
         {
+           
             InitializeComponent();
             connection = new MySqlConnection();
             connection.ConnectionString = db.GetConnection();
             LoadTeachersData();
+           
         }
         public void LoadTeachersData()
         {
@@ -33,13 +35,13 @@ namespace ClassMonitoring.uc
                 using (MySqlConnection newConnection = new MySqlConnection(db.GetConnection()))
                 {
                     newConnection.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("SELECT name,username,user_type FROM monitoringsmsdb.tbl_users", newConnection))
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT section,year,date_created FROM monitoringsmsdb.tbl_sections", newConnection))
                     {
                         using (MySqlDataReader dr = cmd.ExecuteReader())
                         {
                             while (dr.Read())
                             {
-                                dgvadmins.Rows.Add(dr["name"].ToString(), dr["username"].ToString(), dr["user_type"].ToString(),"Update", "Delete");
+                                dgvadmins.Rows.Add(dr["section"].ToString(), dr["year"].ToString(), dr["date_created"].ToString(),"Delete");
                             }
                         }
                     }
@@ -54,8 +56,8 @@ namespace ClassMonitoring.uc
         {
             try
             {
-                string countQuery = "SELECT COUNT(*)FROM tbl_users where username = @user AND name = @name AND user_type = @type";
-                string insertQuery = "INSERT INTO monitoringsmsdb.tbl_users () values(id,@name,@user,@pass,@type)";
+                string countQuery = "SELECT COUNT(*)FROM tbl_sections where us section = @name AND year = @type";
+                string insertQuery = "INSERT INTO monitoringsmsdb.tbl_sections () values(id,@name,@user,DATE(NOW()))";
 
                 using (MySqlConnection newlyConnection = new MySqlConnection(db.GetConnection()))
                 {
@@ -64,10 +66,10 @@ namespace ClassMonitoring.uc
                     // Check if the combination already exists
                     using (MySqlCommand countCmd = new MySqlCommand(countQuery, newlyConnection))
                     {
-                        countCmd.Parameters.AddWithValue("@name", txtname.Text);
-                        countCmd.Parameters.AddWithValue("@user", txtusername.Text);
-                        
-                        countCmd.Parameters.AddWithValue("@type", cmbtype.Text);
+                        countCmd.Parameters.AddWithValue("@name", txtsection.Text);
+                        countCmd.Parameters.AddWithValue("@user", txtyear.Text);
+
+                     
 
                         int count = Convert.ToInt32(countCmd.ExecuteScalar());
 
@@ -77,11 +79,10 @@ namespace ClassMonitoring.uc
                             using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, newlyConnection))
                             {
 
-                                insertCmd.Parameters.AddWithValue("@name", txtname.Text);
-                                insertCmd.Parameters.AddWithValue("@user", txtusername.Text);
-                                insertCmd.Parameters.AddWithValue("@pass", txtpass.Text);
-                                insertCmd.Parameters.AddWithValue("@type", cmbtype.Text);
-                             
+                                insertCmd.Parameters.AddWithValue("@name", txtsection.Text);
+                                insertCmd.Parameters.AddWithValue("@user", txtsection.Text);
+                               
+
 
                                 insertCmd.ExecuteNonQuery();
                                 MessageBox.Show("Account Added!");
@@ -110,7 +111,7 @@ namespace ClassMonitoring.uc
                 {
                     newlyConnection.Open();
 
-                    string query = "SELECT name, username, user_type FROM tbl_users WHERE name LIKE @searchText";
+                    string query = "SELECT section, year, date_created FROM tbl_sections WHERE section LIKE @searchText";
                     using (MySqlCommand cmd = new MySqlCommand(query, newlyConnection))
                     {
                         cmd.Parameters.AddWithValue("@searchText", "%" + txtsearch.Text + "%");
@@ -119,7 +120,7 @@ namespace ClassMonitoring.uc
                         {
                             while (dr.Read())
                             {
-                                dgvadmins.Rows.Add(dr["name"].ToString(), dr["username"].ToString(), dr["user_type"].ToString(), "Update", "Delete");
+                                dgvadmins.Rows.Add(dr["section"].ToString(), dr["year"].ToString(), dr["date_created"].ToString(),"Delete");
                             }
                         }
                     }
@@ -131,52 +132,10 @@ namespace ClassMonitoring.uc
                 }
             }
         }
-        public void editaccount()
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-            try
-            {
-                string updateQuery = "UPDATE monitoringsmsdb.tbl_users SET username = @user, password = @pass WHERE  name = @name ";
 
-                using (MySqlConnection newlyConnection = new MySqlConnection(db.GetConnection()))
-                {
-                    newlyConnection.Open();
-
-                    // Proceed with update
-                    using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, newlyConnection))
-                    {
-                        updateCmd.Parameters.AddWithValue("@name", txtname.Text);
-                        updateCmd.Parameters.AddWithValue("@user", txtusername.Text);
-                        updateCmd.Parameters.AddWithValue("@pass", txtpass.Text);
-                      
-
-                        int rowsAffected = updateCmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Account Updated!");
-                            LoadTeachersData();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No account found with the provided username.");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-
-
-        }
-
-
-
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            Addteacher();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -187,10 +146,14 @@ namespace ClassMonitoring.uc
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             SearchData();
-           
         }
 
-        private void dgvadmins_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvadmins_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvadmins.Columns[e.ColumnIndex].Name == "delete")
             {
@@ -207,7 +170,7 @@ namespace ClassMonitoring.uc
                         name = dgvadmins[0, rowIndex].Value.ToString();
                         user = dgvadmins[1, rowIndex].Value.ToString();
                         usertype = dgvadmins[2, rowIndex].Value.ToString();
-                        cmd = new MySqlCommand("DELETE FROM tbl_users WHERE  name = '" + name + "'  AND username = '" + user + "' AND user_type = '" + usertype + "'; ", newlyrConnection);
+                        cmd = new MySqlCommand("DELETE FROM tbl_sections WHERE  section = '" + name + "'  AND year = '" + user + "'  ", newlyrConnection);
                         cmd.ExecuteNonQuery();
                         newlyrConnection.Close();
                         MessageBox.Show("Account Deleted!");
@@ -216,42 +179,12 @@ namespace ClassMonitoring.uc
 
                 }
             }
-            if (dgvadmins.Columns[e.ColumnIndex].Name == "edit_account")
-            {
-                editaccount();
-                LoadTeachersData();
-                txtname.ReadOnly = true;
-            }
         }
 
         private void txtsearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             SearchData();
             LoadTeachersData();
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgvadmins_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Check if the clicked cell is valid and not a header or empty cell
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Retrieve data from the clicked cell
-                string cellValue1 = dgvadmins.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-                // Retrieve data from the clicked cell in the second column
-                string cellValue2 = dgvadmins.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string cellValue3 = dgvadmins.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-                // Assign the data to the label
-                txtname.Text = cellValue1;
-                txtusername.Text = cellValue2;
-                txtpass.Text = cellValue3;
-            }
         }
     }
 }
