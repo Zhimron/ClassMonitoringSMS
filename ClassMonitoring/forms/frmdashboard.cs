@@ -199,8 +199,10 @@ namespace ClassMonitoring.forms
         {
             if (lblusertype.Text == "Guard")
             {
+
                 lbl_identifier.Text = "Home";
                 uc.ucdashboard uc = new uc.ucdashboard();
+                uc.timer1.Start();
                 uc.Dock = DockStyle.Fill;
                 addUserControl(uc);
             }

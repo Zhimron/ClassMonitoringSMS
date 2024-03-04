@@ -30,22 +30,16 @@ namespace ClassMonitoring.uc
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvrecentstudents = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.student_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_section = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timein = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblyear = new System.Windows.Forms.Label();
             this.lblsection = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
             this.lblstudentid = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtRFID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,9 +61,14 @@ namespace ClassMonitoring.uc
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbPorts = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioOut = new System.Windows.Forms.RadioButton();
-            this.radioIn = new System.Windows.Forms.RadioButton();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelinout = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.student_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_section = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrecentstudents)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -81,6 +80,7 @@ namespace ClassMonitoring.uc
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -99,33 +99,31 @@ namespace ClassMonitoring.uc
             // 
             this.dgvrecentstudents.AllowUserToAddRows = false;
             this.dgvrecentstudents.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvrecentstudents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(26)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvrecentstudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvrecentstudents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(26)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvrecentstudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvrecentstudents.ColumnHeadersHeight = 48;
             this.dgvrecentstudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvrecentstudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.student_id,
             this.student_name,
             this.student_section,
-            this.student_year,
-            this.timein,
-            this.timeout});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvrecentstudents.DefaultCellStyle = dataGridViewCellStyle3;
+            this.student_year});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvrecentstudents.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvrecentstudents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvrecentstudents.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvrecentstudents.Location = new System.Drawing.Point(3, 28);
@@ -157,53 +155,6 @@ namespace ClassMonitoring.uc
             this.dgvrecentstudents.ThemeStyle.RowsStyle.Height = 55;
             this.dgvrecentstudents.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvrecentstudents.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // student_id
-            // 
-            this.student_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.student_id.HeaderText = "Student Id";
-            this.student_id.MinimumWidth = 6;
-            this.student_id.Name = "student_id";
-            this.student_id.ReadOnly = true;
-            this.student_id.Width = 123;
-            // 
-            // student_name
-            // 
-            this.student_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_name.HeaderText = "Name";
-            this.student_name.MinimumWidth = 6;
-            this.student_name.Name = "student_name";
-            this.student_name.ReadOnly = true;
-            // 
-            // student_section
-            // 
-            this.student_section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_section.HeaderText = "Section";
-            this.student_section.MinimumWidth = 6;
-            this.student_section.Name = "student_section";
-            this.student_section.ReadOnly = true;
-            // 
-            // student_year
-            // 
-            this.student_year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_year.HeaderText = "Year";
-            this.student_year.MinimumWidth = 6;
-            this.student_year.Name = "student_year";
-            this.student_year.ReadOnly = true;
-            // 
-            // timein
-            // 
-            this.timein.HeaderText = "Time In";
-            this.timein.MinimumWidth = 6;
-            this.timein.Name = "timein";
-            this.timein.ReadOnly = true;
-            // 
-            // timeout
-            // 
-            this.timeout.HeaderText = "Time Out";
-            this.timeout.MinimumWidth = 6;
-            this.timeout.Name = "timeout";
-            this.timeout.ReadOnly = true;
             // 
             // lblyear
             // 
@@ -241,28 +192,28 @@ namespace ClassMonitoring.uc
             this.lblstudentid.TabIndex = 8;
             this.lblstudentid.Text = "Student-ID:";
             // 
-            // txtSearch
+            // txtRFID
             // 
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(3, 4);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Enter Student ID here";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(713, 97);
-            this.txtSearch.TabIndex = 7;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown_1);
+            this.txtRFID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRFID.DefaultText = "";
+            this.txtRFID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRFID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRFID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRFID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRFID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRFID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRFID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtRFID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRFID.Location = new System.Drawing.Point(3, 4);
+            this.txtRFID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtRFID.Name = "txtRFID";
+            this.txtRFID.PasswordChar = '\0';
+            this.txtRFID.PlaceholderText = "Enter RFID here";
+            this.txtRFID.SelectedText = "";
+            this.txtRFID.Size = new System.Drawing.Size(713, 97);
+            this.txtRFID.TabIndex = 7;
+            this.txtRFID.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtRFID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown_1);
             // 
             // label6
             // 
@@ -481,7 +432,7 @@ namespace ClassMonitoring.uc
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel13, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtSearch, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtRFID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -529,44 +480,77 @@ namespace ClassMonitoring.uc
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.radioOut, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.radioIn, 0, 0);
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(350, 93);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
-            // radioOut
+            // panel1
             // 
-            this.radioOut.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioOut.Location = new System.Drawing.Point(178, 3);
-            this.radioOut.Name = "radioOut";
-            this.radioOut.Size = new System.Drawing.Size(160, 58);
-            this.radioOut.TabIndex = 1;
-            this.radioOut.Text = "TIME OUT";
-            this.radioOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioOut.UseVisualStyleBackColor = true;
-            this.radioOut.CheckedChanged += new System.EventHandler(this.radioOut_CheckedChanged);
+            this.panel1.Controls.Add(this.labelinout);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(344, 87);
+            this.panel1.TabIndex = 0;
             // 
-            // radioIn
+            // labelinout
             // 
-            this.radioIn.Checked = true;
-            this.radioIn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioIn.Location = new System.Drawing.Point(3, 3);
-            this.radioIn.Name = "radioIn";
-            this.radioIn.Size = new System.Drawing.Size(160, 58);
-            this.radioIn.TabIndex = 0;
-            this.radioIn.TabStop = true;
-            this.radioIn.Text = "TIME IN";
-            this.radioIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioIn.UseVisualStyleBackColor = true;
-            this.radioIn.CheckedChanged += new System.EventHandler(this.radioIn_CheckedChanged);
+            this.labelinout.BackColor = System.Drawing.Color.White;
+            this.labelinout.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelinout.Location = new System.Drawing.Point(3, 0);
+            this.labelinout.Name = "labelinout";
+            this.labelinout.Size = new System.Drawing.Size(338, 87);
+            this.labelinout.TabIndex = 0;
+            this.labelinout.Text = "Hello Welcome";
+            this.labelinout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // student_year
+            // 
+            this.student_year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.student_year.FillWeight = 174.4186F;
+            this.student_year.HeaderText = "Year";
+            this.student_year.MinimumWidth = 6;
+            this.student_year.Name = "student_year";
+            this.student_year.ReadOnly = true;
+            this.student_year.Width = 50;
+            // 
+            // student_section
+            // 
+            this.student_section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_section.FillWeight = 62.7907F;
+            this.student_section.HeaderText = "Section";
+            this.student_section.MinimumWidth = 6;
+            this.student_section.Name = "student_section";
+            this.student_section.ReadOnly = true;
+            // 
+            // student_name
+            // 
+            this.student_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_name.FillWeight = 62.7907F;
+            this.student_name.HeaderText = "Name";
+            this.student_name.MinimumWidth = 6;
+            this.student_name.Name = "student_name";
+            this.student_name.ReadOnly = true;
+            // 
+            // student_id
+            // 
+            this.student_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_id.HeaderText = "Student Id";
+            this.student_id.MinimumWidth = 6;
+            this.student_id.Name = "student_id";
+            this.student_id.ReadOnly = true;
             // 
             // ucdashboard
             // 
@@ -589,6 +573,7 @@ namespace ClassMonitoring.uc
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -597,17 +582,11 @@ namespace ClassMonitoring.uc
 
         private System.Windows.Forms.GroupBox groupBox2;
         private Guna.UI2.WinForms.Guna2DataGridView dgvrecentstudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn student_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn student_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn student_section;
-        private System.Windows.Forms.DataGridViewTextBoxColumn student_year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timein;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeout;
         private System.Windows.Forms.Label lblyear;
         private System.Windows.Forms.Label lblsection;
         private System.Windows.Forms.Label lblname;
         private System.Windows.Forms.Label lblstudentid;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2TextBox txtRFID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -627,10 +606,15 @@ namespace ClassMonitoring.uc
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private Guna.UI2.WinForms.Guna2ComboBox cmbPorts;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.RadioButton radioOut;
-        private System.Windows.Forms.RadioButton radioIn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblcontact;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelinout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn student_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn student_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn student_section;
+        private System.Windows.Forms.DataGridViewTextBoxColumn student_year;
+        public System.Windows.Forms.Timer timer1;
     }
 }
