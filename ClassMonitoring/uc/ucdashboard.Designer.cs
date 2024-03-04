@@ -30,11 +30,15 @@ namespace ClassMonitoring.uc
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvrecentstudents = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.student_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_section = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblyear = new System.Windows.Forms.Label();
             this.lblsection = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
@@ -61,14 +65,10 @@ namespace ClassMonitoring.uc
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbPorts = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelinout = new System.Windows.Forms.Label();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.student_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_section = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrecentstudents)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -99,16 +99,16 @@ namespace ClassMonitoring.uc
             // 
             this.dgvrecentstudents.AllowUserToAddRows = false;
             this.dgvrecentstudents.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvrecentstudents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(26)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvrecentstudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvrecentstudents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(26)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvrecentstudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvrecentstudents.ColumnHeadersHeight = 48;
             this.dgvrecentstudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvrecentstudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -116,14 +116,14 @@ namespace ClassMonitoring.uc
             this.student_name,
             this.student_section,
             this.student_year});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvrecentstudents.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvrecentstudents.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvrecentstudents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvrecentstudents.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvrecentstudents.Location = new System.Drawing.Point(3, 28);
@@ -155,6 +155,42 @@ namespace ClassMonitoring.uc
             this.dgvrecentstudents.ThemeStyle.RowsStyle.Height = 55;
             this.dgvrecentstudents.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvrecentstudents.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // student_id
+            // 
+            this.student_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_id.HeaderText = "Student Id";
+            this.student_id.MinimumWidth = 6;
+            this.student_id.Name = "student_id";
+            this.student_id.ReadOnly = true;
+            // 
+            // student_name
+            // 
+            this.student_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_name.FillWeight = 62.7907F;
+            this.student_name.HeaderText = "Name";
+            this.student_name.MinimumWidth = 6;
+            this.student_name.Name = "student_name";
+            this.student_name.ReadOnly = true;
+            // 
+            // student_section
+            // 
+            this.student_section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_section.FillWeight = 62.7907F;
+            this.student_section.HeaderText = "Section";
+            this.student_section.MinimumWidth = 6;
+            this.student_section.Name = "student_section";
+            this.student_section.ReadOnly = true;
+            // 
+            // student_year
+            // 
+            this.student_year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.student_year.FillWeight = 174.4186F;
+            this.student_year.HeaderText = "Year";
+            this.student_year.MinimumWidth = 6;
+            this.student_year.Name = "student_year";
+            this.student_year.ReadOnly = true;
+            this.student_year.Width = 50;
             // 
             // lblyear
             // 
@@ -515,42 +551,6 @@ namespace ClassMonitoring.uc
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // student_year
-            // 
-            this.student_year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.student_year.FillWeight = 174.4186F;
-            this.student_year.HeaderText = "Year";
-            this.student_year.MinimumWidth = 6;
-            this.student_year.Name = "student_year";
-            this.student_year.ReadOnly = true;
-            this.student_year.Width = 50;
-            // 
-            // student_section
-            // 
-            this.student_section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_section.FillWeight = 62.7907F;
-            this.student_section.HeaderText = "Section";
-            this.student_section.MinimumWidth = 6;
-            this.student_section.Name = "student_section";
-            this.student_section.ReadOnly = true;
-            // 
-            // student_name
-            // 
-            this.student_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_name.FillWeight = 62.7907F;
-            this.student_name.HeaderText = "Name";
-            this.student_name.MinimumWidth = 6;
-            this.student_name.Name = "student_name";
-            this.student_name.ReadOnly = true;
-            // 
-            // student_id
-            // 
-            this.student_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_id.HeaderText = "Student Id";
-            this.student_id.MinimumWidth = 6;
-            this.student_id.Name = "student_id";
-            this.student_id.ReadOnly = true;
             // 
             // ucdashboard
             // 

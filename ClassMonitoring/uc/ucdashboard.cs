@@ -43,20 +43,21 @@ namespace ClassMonitoring.uc
             cmbPorts.Items.AddRange(portInfoList.ToArray());
         }
         
-/*        private void sendingMsg()
+        private void sendingMsg()
         {
-            string timeinout;
-            if (radioIn.Checked)
+            string timeinout = string.Empty;
+            if (labelinout.Text == "Time In Successful")
             {
-               timeinout = "Entered at school";
+                timeinout = "Entered at school";
             }
-            else
+            else if (labelinout.Text == "Time Out Successful")
             {
                 timeinout = "Exit at the school";
             }
 
+
             //String globalsms =  label7.Text + " " + timeio + " " + lblTime.Text;
-            String globalsms = "Student " + lblname.Text + " is on the school " + timeinout + " @" + DateTime.Now;
+            String globalsms = $"Student {lblname.Text} is on the school {timeinout} @{DateTime.Now}";
 
             // get the selected port name from the combobox (including device name)
             string selectedportinfo = cmbPorts.SelectedItem.ToString();
@@ -104,7 +105,7 @@ namespace ClassMonitoring.uc
                 MessageBox.Show("An error occurred: " + ex.Message, "PORT", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }*/
+        }
 
         public void CountStudents(string grade, Label totalstudent)
             {
@@ -174,7 +175,7 @@ namespace ClassMonitoring.uc
         {
             dgvrecentstudents.Rows.Clear();
             string formattedDate = DateTime.Now.ToString("yyyy-MM-dd");
-
+            connection.Close();
             connection.Open();
             cmd = new MySqlCommand("SELECT t1.student_id as ID, CONCAT(t1.first_name, ' ', LEFT(t1.middle_name, 1), '.', ' ', t1.last_name) as fullname, t1.year_level, t1.section, TIME_FORMAT(t2.time_in, '%H:%i:%s') as time_in, TIME_FORMAT(t2.time_out, '%H:%i:%s') as time_out " +
                     "FROM tbl_attendance_records as t2 " +
@@ -423,12 +424,12 @@ namespace ClassMonitoring.uc
                     if (table.Rows.Count != 0)
                     {
                         CheckTimeOut();
-
+                        
                     }
                     else
                     {
                         TimeIn();
-
+                        sendingMsg();
                     }
 
                     da.Dispose();
@@ -517,6 +518,7 @@ namespace ClassMonitoring.uc
                     else
                     {
                         TimeOut();
+                        sendingMsg();
                     }
 
                     da.Dispose();
