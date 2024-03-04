@@ -41,7 +41,7 @@ namespace ClassMonitoring.uc
                         {
                             while (dr.Read())
                             {
-                                dgvadmins.Rows.Add(dr["section"].ToString(), dr["year"].ToString(), dr["date_created"].ToString(),"Delete");
+                                dgvadmins.Rows.Add(dr["section"].ToString(), dr["year"].ToString(), dr["date_created"].ToString(),"Update","Delete");
                             }
                         }
                     }
@@ -155,6 +155,72 @@ namespace ClassMonitoring.uc
 
         private void dgvadmins_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+                // Check if the clicked cell is valid and not a header or empty cell
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Retrieve data from the clicked cell
+                    string cellValue1 = dgvadmins.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                    // Retrieve data from the clicked cell in the second column
+                    string cellValue2 = dgvadmins.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string cellValue3 = dgvadmins.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                    // Assign the data to the label
+                   // txtname.Text = cellValue1;
+                  //  txtusername.Text = cellValue2;
+                    //txtpass.Text = cellValue3;
+                }
+            }
+        
+
+        private void txtsearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SearchData();
+            LoadTeachersData();
+        }
+        public void editaccount()
+        {
+            try
+            {
+                string updateQuery = "UPDATE monitoringsmsdb.tbl_sections SET year = @user, section = @name WHERE  year = @user AND section = @name";
+
+                using (MySqlConnection newlyConnection = new MySqlConnection(db.GetConnection()))
+                {
+                    newlyConnection.Open();
+
+                    // Proceed with update
+                    using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, newlyConnection))
+                    {
+                        updateCmd.Parameters.AddWithValue("@name", txtsection.Text);
+                        updateCmd.Parameters.AddWithValue("@user", txtyear.Text);
+                        
+
+
+                        int rowsAffected = updateCmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Account Updated!");
+                            LoadTeachersData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No account found with the provided username.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+
+
+        }
+
+        private void dgvadmins_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (dgvadmins.Columns[e.ColumnIndex].Name == "delete")
             {
                 DialogResult result = MessageBox.Show("Do you want to delete this Advisory?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -179,12 +245,12 @@ namespace ClassMonitoring.uc
 
                 }
             }
-        }
-
-        private void txtsearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            SearchData();
-            LoadTeachersData();
+            if (dgvadmins.Columns[e.ColumnIndex].Name == "update")
+            {
+                editaccount();
+                LoadTeachersData();
+                
+            }
         }
     }
 }

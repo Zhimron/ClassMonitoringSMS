@@ -42,15 +42,15 @@ namespace ClassMonitoring.uc
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvteacherstudents = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.teacher_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacher_section = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacher_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.teacher_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacher_section = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacher_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvteacherstudents)).BeginInit();
@@ -277,39 +277,6 @@ namespace ClassMonitoring.uc
             this.dgvteacherstudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvteacherstudents_CellClick);
             this.dgvteacherstudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvteacherstudents_CellContentClick);
             // 
-            // teacher_name
-            // 
-            this.teacher_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.teacher_name.HeaderText = "Name";
-            this.teacher_name.MinimumWidth = 6;
-            this.teacher_name.Name = "teacher_name";
-            this.teacher_name.ReadOnly = true;
-            // 
-            // teacher_section
-            // 
-            this.teacher_section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.teacher_section.HeaderText = "Section";
-            this.teacher_section.MinimumWidth = 6;
-            this.teacher_section.Name = "teacher_section";
-            this.teacher_section.ReadOnly = true;
-            // 
-            // teacher_year
-            // 
-            this.teacher_year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.teacher_year.HeaderText = "Year";
-            this.teacher_year.MinimumWidth = 6;
-            this.teacher_year.Name = "teacher_year";
-            this.teacher_year.ReadOnly = true;
-            // 
-            // delete
-            // 
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.HeaderText = "";
-            this.delete.MinimumWidth = 6;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -397,6 +364,39 @@ namespace ClassMonitoring.uc
             this.guna2Panel1.Size = new System.Drawing.Size(990, 36);
             this.guna2Panel1.TabIndex = 25;
             // 
+            // teacher_name
+            // 
+            this.teacher_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.teacher_name.HeaderText = "Name";
+            this.teacher_name.MinimumWidth = 6;
+            this.teacher_name.Name = "teacher_name";
+            this.teacher_name.ReadOnly = true;
+            // 
+            // teacher_section
+            // 
+            this.teacher_section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.teacher_section.HeaderText = "Section";
+            this.teacher_section.MinimumWidth = 6;
+            this.teacher_section.Name = "teacher_section";
+            this.teacher_section.ReadOnly = true;
+            // 
+            // teacher_year
+            // 
+            this.teacher_year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.teacher_year.HeaderText = "Year";
+            this.teacher_year.MinimumWidth = 6;
+            this.teacher_year.Name = "teacher_year";
+            this.teacher_year.ReadOnly = true;
+            // 
+            // delete
+            // 
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.HeaderText = "";
+            this.delete.MinimumWidth = 6;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // UCclass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,11 +432,11 @@ namespace ClassMonitoring.uc
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvteacherstudents;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacher_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacher_section;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacher_year;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

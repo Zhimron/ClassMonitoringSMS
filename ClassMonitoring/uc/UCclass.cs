@@ -272,8 +272,7 @@ namespace ClassMonitoring.uc
 
         private void guna2Button2_Click_1(object sender, EventArgs e)
         {
-            tableLayoutPanel3.Visible = !tableLayoutPanel3.Visible;
-           
+            tableLayoutPanel3.Visible = !tableLayoutPanel3.Visible;        
         }
 
         private void dgvteacherstudents_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -300,7 +299,7 @@ namespace ClassMonitoring.uc
                         LoadTeachersData();
                     }
 
-                }
+                }       
             }
         }
 
