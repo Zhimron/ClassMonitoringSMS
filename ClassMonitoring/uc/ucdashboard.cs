@@ -371,7 +371,7 @@ namespace ClassMonitoring.uc
 
         public void CheckID()
         {
-
+            timer1.Start();
             string query = "SELECT * FROM tbl_student_profile WHERE rfid = @RfId";
 
             using (MySqlCommand cmd = new MySqlCommand(query, connection))
@@ -625,8 +625,18 @@ namespace ClassMonitoring.uc
         {
             if (txtRFID.Text.Length == 10)
             {
-                CheckID();
-                LoadData();
+                if (cmbPorts.Text == "")
+                {
+                    MessageBox.Show("Select Port");
+                    txtRFID.Clear();
+                    txtRFID.Focus();
+                }
+                else
+                {
+                    CheckID();
+                    LoadData();
+                }
+
             }
         }
 
@@ -673,8 +683,30 @@ namespace ClassMonitoring.uc
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+
             LoadData();
             StudentsRefresh();
         }
+
+        private void txtRFID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtRFID.Text.Length == 10 && e.KeyChar != (char)Keys.Back)
+            {
+                if (cmbPorts.Text == "")
+                {
+                    MessageBox.Show("Select Port");
+                    txtRFID.Clear();
+                    txtRFID.Focus();
+                }
+                else
+                {
+                    CheckID();
+                    LoadData();
+                }
+
+     
+
+        }
+    }
     }
 }
