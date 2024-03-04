@@ -12,7 +12,6 @@ using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace ClassMonitoring.uc
 {
     public partial class ucdashboard : UserControl
@@ -22,14 +21,14 @@ namespace ClassMonitoring.uc
         MySqlDataReader dr;
         MySqlDataAdapter da;
         database db = new database();
-            public ucdashboard()
+        public ucdashboard()
             {
                 InitializeComponent();
             
                 connection = new MySqlConnection();
                 connection.ConnectionString = db.GetConnection();
-                presentStudents();
-                StudentsRefresh();
+/*                presentStudents();
+                StudentsRefresh();*/
 
             string[] availablePorts = SerialPort.GetPortNames();
             List<string> portInfoList = new List<string>();
@@ -44,7 +43,7 @@ namespace ClassMonitoring.uc
             cmbPorts.Items.AddRange(portInfoList.ToArray());
         }
         
-        private void sendingMsg()
+/*        private void sendingMsg()
         {
             string timeinout;
             if (radioIn.Checked)
@@ -105,9 +104,7 @@ namespace ClassMonitoring.uc
                 MessageBox.Show("An error occurred: " + ex.Message, "PORT", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
-
-
+        }*/
 
         public void CountStudents(string grade, Label totalstudent)
             {
@@ -139,16 +136,20 @@ namespace ClassMonitoring.uc
 
                 }
             }
+
         public void StudentsRefresh()
         {
           
             CountStudents("1", lbltotalpresent);
             CountStudents(null, lbltotalpresent);
+            timer1.Stop();
         }
+
         public void presentStudents()
         {
             string formattedDate = DateTime.Now.ToString("yyyy-MM-dd");
             dgvrecentstudents.Rows.Clear();
+
             using (connection)
             {
                 connection.Open();
@@ -169,6 +170,31 @@ namespace ClassMonitoring.uc
             }
         }
 
+        public void LoadData()
+        {
+            dgvrecentstudents.Rows.Clear();
+            string formattedDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+            connection.Open();
+            cmd = new MySqlCommand("SELECT t1.student_id as ID, CONCAT(t1.first_name, ' ', LEFT(t1.middle_name, 1), '.', ' ', t1.last_name) as fullname, t1.year_level, t1.section, TIME_FORMAT(t2.time_in, '%H:%i:%s') as time_in, TIME_FORMAT(t2.time_out, '%H:%i:%s') as time_out " +
+                    "FROM tbl_attendance_records as t2 " +
+                    "LEFT JOIN tbl_student_profile AS t1 ON t1.rfid = t2.rfid  where DATE(date_logged) = '" + formattedDate + "' " +
+                    "ORDER BY date_logged DESC LIMIT 5", connection);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+
+
+                string timeIn = FormatTime(dr["time_in"].ToString());
+                string timeOut = FormatTime(dr["time_out"].ToString());
+
+                dgvrecentstudents.Rows.Add(dr["ID"].ToString(), dr["fullname"].ToString(), dr["section"].ToString(), dr["year_level"].ToString(), timeIn, timeOut);
+            }
+            dr.Close();
+            connection.Close();
+            
+        }
+
         private string FormatTime(string time)
         {
             DateTime parsedTime;
@@ -179,7 +205,6 @@ namespace ClassMonitoring.uc
             return time; // Return the original value if it cannot be parsed as a DateTime
         }
 
-
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
@@ -188,10 +213,11 @@ namespace ClassMonitoring.uc
         private void UCdashboard_Load(object sender, EventArgs e)
         {
 
-            presentStudents();
-            StudentsRefresh();
+            LoadData();
+
 
         }
+
         private string GetDeviceNameForPort(string portName)
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher($"SELECT * FROM Win32_PnPEntity WHERE Caption LIKE '%{portName}%'");
@@ -205,18 +231,361 @@ namespace ClassMonitoring.uc
             return "Unknown Device";
         }
 
+        /*        public void StudentData()
+                {
+                    connection.Close();
+                    connection.Open();
+
+                    string query = "SELECT * FROM tbl_student_profile WHERE student_id = '" + txtRFID.Text + "'";
+
+                    cmd = new MySqlCommand(query, connection);
+
+                    da = new MySqlDataAdapter(cmd);
+
+                    DataTable table = new   DataTable();
+
+                    da.Fill(table);
+
+                    // Check if there is no data in the DataTable
+                    if (table.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Invalid ID");
+
+                    }
+                    else
+                    {
+                        lblstudentid.Text = table.Rows[0][1].ToString();
+                        lblyear.Text = table.Rows[0][7].ToString();
+                        lblsection.Text = table.Rows[0][8].ToString();
+                        lblcontact.Text = table.Rows[0][12].ToString();
+                        lblname.Text = table.Rows[0][4].ToString() + " " + table.Rows[0][5].ToString() + " " + table.Rows[0][6].ToString();
+                        //byte[] img = (byte[])table.Rows[0][9];
+                        //MemoryStream ms = new MemoryStream(img);
+                        //studentpic.Image = Image.FromStream(ms);
+
+                        //  EnterStudent();
+
+                    }
+                    txtRFID.Clear();
+                    txtRFID.Focus();
+
+                    da.Dispose();
+                    connection.Close();
+
+                }
+
+                public void EnterStudent()
+                {
+                    if (radioIn.Checked == true)
+                    {
+                        connection.Close();
+                        connection.Open();
+
+                        string query = "INSERT INTO tbl_attendance_records (student_id, time_in, date_logged) " +
+                            "VALUES (@student_id, CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00'), CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00'))";
+
+
+                        using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@student_id", lblstudentid.Text);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        connection.Close();
+                        StudentsRefresh();
+                        presentStudents();
+                        sendingMsg();
+
+
+                    }
+                    else
+                    {
+                        connection.Close();
+                        connection.Open();
+
+                        string query = "UPDATE tbl_attendance_records " +
+                        "SET time_out = CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00') " +
+                        "WHERE student_id = @student_id";
+
+                        using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@student_id", lblstudentid.Text);
+                            cmd.ExecuteNonQuery();
+                        }
+                        connection.Close();
+                        StudentsRefresh();
+                        presentStudents();
+                        sendingMsg();
+
+                    }
+                }
+
+                public void SelectCount()
+                {
+
+                    connection.Open();
+
+                    // Format DateTime.Now as 'yyyy-MM-dd' for the SQL query
+                    string currentDate = DateTime.Now.ToString("yyyy-MM-dd"); // Change the format to "yyyy-MM-dd"
+
+                    string query = "SELECT * FROM monitoringdb.tbl_attendance_records WHERE rfid = @StudentId AND DATE(date_logged) = @CurrentDate";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@StudentId", txtRFID.Text);
+                        cmd.Parameters.AddWithValue("@CurrentDate", currentDate);
+
+                        using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable table = new DataTable();
+                            da.Fill(table);
+                            int rowCount = table.Rows.Count;
+                            if (table.Rows.Count != 0)
+                            {
+                                StudentData();
+                                EnterStudent();
+                                txtRFID.Clear();
+                                da.Dispose();
+                                connection.Close();
+
+                                return;
+
+                            }
+                            else
+                            {
+
+                                StudentData();
+                                EnterStudent();
+                                txtRFID.Clear();
+                                da.Dispose();
+                                connection.Close();
+
+                                return;
+
+                            }
+
+                        }
+                    }
+                }      */
+
+        public void CheckID()
+        {
+
+            string query = "SELECT * FROM tbl_student_profile WHERE rfid = @RfId";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@RfId", txtRFID.Text);
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+                    da.Fill(table);
+
+                    if (table.Rows.Count != 0)
+                    {
+
+
+                        CheckRecordForToday();
+
+                    }
+                    else
+                    {
+/*                        labelinout.Text = "Invalid RFID";
+                        labelinout.BackColor = Color.Red;*/
+                        txtRFID.Clear();
+                        txtRFID.Focus();
+
+                    }
+                }
+            }
+        }
+
+        public void CheckRecordForToday()
+        {
+            connection.Open();
+
+            // Format DateTime.Now as 'yyyy-MM-dd' for the SQL query
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd"); // Change the format to "yyyy-MM-dd"
+
+            string query = "SELECT * FROM tbl_attendance_records WHERE rfid = @RfId AND DATE(date_logged) = @CurrentDate";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@RfId", txtRFID.Text);
+                cmd.Parameters.AddWithValue("@CurrentDate", currentDate);
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+                    da.Fill(table);
+
+                    if (table.Rows.Count != 0)
+                    {
+                        CheckTimeOut();
+
+                    }
+                    else
+                    {
+                        TimeIn();
+
+                    }
+
+                    da.Dispose();
+                }
+
+                connection.Close();
+            }
+
+
+        }
+
+        public void CheckTimeOut()
+        {
+            connection.Close();
+            connection.Open();
+
+            // Format DateTime.Now as 'yyyy-MM-dd' for the SQL query
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd"); // Change the format to "yyyy-MM-dd"
+
+            string query = "SELECT * FROM monitoringdb.tbl_attendance_records WHERE rfid = @RfId AND DATE(date_logged) = @CurrentDate AND time_out IS NOT NULL";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@RfId", txtRFID.Text);
+                cmd.Parameters.AddWithValue("@CurrentDate", currentDate);
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+                    da.Fill(table);
+
+                    if (table.Rows.Count != 0)
+                    {
+
+                       StudentData();
+                        labelinout.Text = "Already Timed Out";
+                        labelinout.BackColor = Color.Orange;
+                        txtRFID.Clear();
+                        txtRFID.Focus();
+
+                    }
+                    else
+                    {
+                        CheckInMinutes();
+                    }
+
+                    da.Dispose();
+                }
+
+                connection.Close();
+            }
+        }
+
+        public void CheckInMinutes()
+        {
+            connection.Close();
+            connection.Open();
+
+            // Format DateTime.Now as 'yyyy-MM-dd' for the SQL query
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+            // Calculate the DateTime representing 15 minutes ago
+            DateTime fifteenMinutesAgo = DateTime.Now.AddMinutes(-15);
+
+            string query = "SELECT time_in FROM tbl_attendance_records WHERE rfid = @RfId AND time_in >= @FifteenMinutesAgo";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@RfId", txtRFID.Text);
+                cmd.Parameters.AddWithValue("@FifteenMinutesAgo", fifteenMinutesAgo);
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+                    da.Fill(table);
+
+                    if (table.Rows.Count != 0)
+                    {
+                        StudentData();
+                        labelinout.Text = "Already Timed In";
+                        labelinout.BackColor = Color.DodgerBlue;
+                        txtRFID.Clear();
+                        txtRFID.Focus();
+
+                    }
+                    else
+                    {
+                        TimeOut();
+                    }
+
+                    da.Dispose();
+                }
+
+                connection.Close();
+            }
+        }
+
+        public void TimeIn()
+        {
+            connection.Close();
+            connection.Open();
+
+            string query = "INSERT INTO tbl_attendance_records (rfid, time_in, date_logged) " +
+                "VALUES (@rfid, CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00'), CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00'))";
+
+
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@rfid", txtRFID.Text);
+                cmd.ExecuteNonQuery();
+            }
+
+            connection.Close();
+            labelinout.Text = "Time In Successful";
+            labelinout.BackColor = Color.DodgerBlue;
+            txtRFID.Focus();
+            StudentData();
+            // sendingMsg();
+
+        }
+
+        public void TimeOut()
+        {
+            connection.Close();
+            connection.Open();
+
+
+
+            string query = "UPDATE tbl_attendance_records " +
+            "SET time_out = CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00') " +
+            "WHERE rfid = @rfid";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@rfid", txtRFID.Text);
+                cmd.ExecuteNonQuery();
+            }
+            labelinout.Text = "Time Out Successful";
+            labelinout.BackColor = Color.Orange;
+            txtRFID.Focus();
+            connection.Close();
+            StudentData();
+            // sendingMsg();
+        }
+
         public void StudentData()
         {
             connection.Close();
             connection.Open();
 
-            string query = "SELECT * FROM tbl_student_profile WHERE student_id = '" + txtSearch.Text + "'";
+            string query = "SELECT * FROM tbl_student_profile WHERE rfid = '" + txtRFID.Text + "'";
 
             cmd = new MySqlCommand(query, connection);
 
             da = new MySqlDataAdapter(cmd);
 
-            DataTable table = new   DataTable();
+            DataTable table = new DataTable();
 
             da.Fill(table);
 
@@ -231,142 +600,51 @@ namespace ClassMonitoring.uc
                 lblstudentid.Text = table.Rows[0][1].ToString();
                 lblyear.Text = table.Rows[0][7].ToString();
                 lblsection.Text = table.Rows[0][8].ToString();
-                lblcontact.Text = table.Rows[0][12].ToString();
-                lblname.Text = table.Rows[0][4].ToString() + " " + table.Rows[0][5].ToString() + " " + table.Rows[0][6].ToString();
-                //byte[] img = (byte[])table.Rows[0][9];
-                //MemoryStream ms = new MemoryStream(img);
-                //studentpic.Image = Image.FromStream(ms);
+                lblname.Text = table.Rows[0][4].ToString() + " " + table.Rows[0][6].ToString();
+                lblcontact.Text = table.Rows[0][11].ToString();
+                byte[] img = (byte[])table.Rows[0][09];
+                MemoryStream ms = new MemoryStream(img);
+                studentpic.Image = Image.FromStream(ms);
 
                 //  EnterStudent();
 
             }
-            txtSearch.Clear();
-            txtSearch.Focus();
+            txtRFID.Clear();
+            txtRFID.Focus();
 
             da.Dispose();
             connection.Close();
 
         }
 
-        public void EnterStudent()
-        {
-            if (radioIn.Checked == true)
-            {
-                connection.Close();
-                connection.Open();
-
-                string query = "INSERT INTO tbl_attendance_records (student_id, time_in, date_logged) " +
-                    "VALUES (@student_id, CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00'), CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00'))";
 
 
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@student_id", lblstudentid.Text);
-                    cmd.ExecuteNonQuery();
-                }
-
-                connection.Close();
-                StudentsRefresh();
-                presentStudents();
-                sendingMsg();
-
-
-            }
-            else
-            {
-                connection.Close();
-                connection.Open();
-
-                string query = "UPDATE tbl_attendance_records " +
-                "SET time_out = CONVERT_TZ(CURRENT_TIMESTAMP, '+00:00', '+00:00') " +
-                "WHERE student_id = @student_id";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@student_id", lblstudentid.Text);
-                    cmd.ExecuteNonQuery();
-                }
-                connection.Close();
-                StudentsRefresh();
-                presentStudents();
-                sendingMsg();
-
-            }
-        }
-
-        public void SelectCount()
-        {
-           
-            connection.Open();
-
-            // Format DateTime.Now as 'yyyy-MM-dd' for the SQL query
-            string currentDate = DateTime.Now.ToString("yyyy-MM-dd"); // Change the format to "yyyy-MM-dd"
-
-            string query = "SELECT * FROM monitoringdb.tbl_attendance_records WHERE student_id = @StudentId AND DATE(date_logged) = @CurrentDate";
-
-            using (MySqlCommand cmd = new MySqlCommand(query, connection))
-            {
-                cmd.Parameters.AddWithValue("@StudentId", txtSearch.Text);
-                cmd.Parameters.AddWithValue("@CurrentDate", currentDate);
-
-                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
-                {
-                    DataTable table = new DataTable();
-                    da.Fill(table);
-                    int rowCount = table.Rows.Count;
-                    if (table.Rows.Count != 0)
-                    {
-                        StudentData();
-                        EnterStudent();
-                        txtSearch.Clear();
-                        da.Dispose();
-                        connection.Close();
-
-                        return;
-
-                    }
-                    else
-                    {
-
-                        StudentData();
-                        EnterStudent();
-                        txtSearch.Clear();
-                        da.Dispose();
-                        connection.Close();
-
-                        return;
-
-                    }
-
-                }
-            }
-        }
-
-
-       
-        
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtRFID.Text.Length == 10)
+            {
+                CheckID();
+                LoadData();
+            }
         }
 
         private void txtSearch_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                SelectCount();
-               
+
+
             }
         }
 
         private void radioIn_CheckedChanged(object sender, EventArgs e)
         {
-            txtSearch.Focus();
+            txtRFID.Focus();
         }
 
         private void radioOut_CheckedChanged(object sender, EventArgs e)
         {
-            txtSearch.Focus();
+            txtRFID.Focus();
         }
 
         private void lbltotalpresent_Click(object sender, EventArgs e)
@@ -382,6 +660,19 @@ namespace ClassMonitoring.uc
         private void cmbPorts_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            LoadData();
+            StudentsRefresh();
         }
     }
 }
